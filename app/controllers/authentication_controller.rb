@@ -5,7 +5,7 @@ class AuthenticationController < ApplicationController
     customer_id = Rails.configuration.smile[:sample_customer_id]
     private_key = Rails.application.credentials.smile[:private_key]
     expiration_time = 2*60*60
-    
+
     payload = {
       customer_identity: {
         distinct_id: customer_id
@@ -17,5 +17,4 @@ class AuthenticationController < ApplicationController
 
     render json: { token: signed_jwt }
   end
-
 end
