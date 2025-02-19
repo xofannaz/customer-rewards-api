@@ -15,7 +15,7 @@ class AuthenticationController < ApplicationController
 
     signed_jwt = JWT.encode(payload, private_key, "HS256")
 
-    render json: { jwt: signed_jwt }
+    render json: { token: signed_jwt }
   end
 
 end
