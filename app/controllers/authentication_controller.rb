@@ -2,7 +2,7 @@ require "jwt"
 
 class AuthenticationController < ApplicationController
   def authenticate
-    customer_id = Rails.configuration.smile[:sample_customer_id]
+    customer_id = Rails.configuration.smile[:shopify_customer_id]
     private_key = Rails.application.credentials.smile[:private_key]
     expiration_time = 2*60*60
 
